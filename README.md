@@ -11,7 +11,7 @@ In order to create the site's foundation design, the program uses a.CSS file imp
 ## Links
 https://github.com/dana-younis/resty/pull/1
 
-https://codesandbox.io/s/nmmnh
+https://codesandbox.io/s/c6d04
 ## UML
 
 ![uml](./base.jpg)
