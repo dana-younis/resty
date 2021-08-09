@@ -9,7 +9,6 @@ In order to create the site's foundation design, the program uses a.CSS file imp
   This function is handed down through a prop to the App component so that it may begin the procedure.
 
 ## Links
-https://github.com/dana-younis/resty/pull/5
 
 https://codesandbox.io/s/c6d04
 ## UML

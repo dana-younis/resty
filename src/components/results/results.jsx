@@ -1,24 +1,11 @@
-// import React from 'react';
-
-// class Results extends React.Component {
-//   render() {
-//     return (
-//       <section>
-//         <pre>{this.props.data ? JSON.stringify(this.props.data, undefined, 2) : null}</pre>
-//       </section>
-//     );
-//   }
-// }
-
-// export default Results;
-
-import React from 'react';
+import React from 'react'
+import Loading from '../Loading/Loading.jsx'
 
 function Results(props) {
   return (
     <section>
-      <pre>{props.data ? JSON.stringify(props.data, undefined, 2) : null}</pre>
-    </section>
+    <pre data-testid="renderedData">{props.data ? JSON.stringify(props.data, undefined, 2) : <Loading/>}</pre>
+  </section>
   )
 }
 
