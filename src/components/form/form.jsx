@@ -6,9 +6,9 @@ import { useState,useEffect } from 'react';
 
 function Form(props) {
   let [showPostTextArea,setShowPostTextArea] = useState(false);
-  let [method, setmethod] = useState('get');
-  let [url, seturl] = useState("https://pokeapi.co/api/v2/pokemon");
-  let [requestBody, setrequestBody] = useState("https://pokeapi.co/api/v2/pokemon");
+  let [method, methodFunc] = useState('get');
+  let [url, urlFunc] = useState("https://pokeapi.co/api/v2/pokemon");
+  let [requestBody, setRequestBody] = useState("https://pokeapi.co/api/v2/pokemon");
 
 
   function handleSubmit(e){
@@ -22,19 +22,19 @@ function Form(props) {
 
   function handlePostTextArea(e){
     setShowPostTextArea(!showPostTextArea);
-    setmethod(e.target.id);  
+    methodFunc(e.target.id);  
   }
 
   function setMethod(e){
-    setmethod(e.target.id);
+    methodFunc(e.target.id);
   }
 
   function handleUrl(e){
-    seturl(e.target.value);
+    urlFunc(e.target.value);
   }
 
   function handleRequestBody(e){
-    setrequestBody(e.target.value);
+    setRequestBody(e.target.value);
   }
 
   return (
