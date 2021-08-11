@@ -9,13 +9,12 @@ import Form from './components/form/form';
 import Results from './components/results/results';
 
 class App extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
       data: null,
       requestParams: {},
-      showLoading:false
+      showLoading: false,
     };
   }
 
@@ -23,23 +22,23 @@ class App extends React.Component {
     // mock output
     const data = {
       Headers: {
-        "content-type" : 'string application/json'
+        'content-type': 'string application/json',
       },
       count: 2,
       results: [
-        {name: 'fake thing 1', url: 'http://fakethings.com/1'},
-        {name: 'fake thing 2', url: 'http://fakethings.com/2'},
+        { name: 'fake thing 1', url: 'http://fakethings.com/1' },
+        { name: 'fake thing 2', url: 'http://fakethings.com/2' },
       ],
     };
-    this.setState({data, requestParams, showLoading:true});
-  }
+    this.setState({ data, requestParams, showLoading: true });
+  };
 
   render() {
     return (
       <React.Fragment>
         <Header />
         <div class="div">Request Method: {this.state.requestParams.method}</div>
-        <div  class="div">URL: {this.state.requestParams.url}</div>
+        <div class="div">URL: {this.state.requestParams.url}</div>
         <Form handleApiCall={this.callApi} />
         <Results data={this.state.data} />
         <Footer />

@@ -1,5 +1,5 @@
 import React from 'react';
-import Loading from '../Loading/Loading';
+import Loading from '../Loading/Loading.jsx';
 import JSONPretty from 'react-json-pretty';
 import 'react-json-pretty/themes/monikai.css';
 
