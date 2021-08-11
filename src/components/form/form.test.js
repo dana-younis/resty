@@ -24,8 +24,10 @@ it('Should render results', () => {
   };
   render(<Results data={data} />);
   const items = screen.getByTestId('renderedData');
-  expect(items).toHaveTextContent('{ "Headers": { "content-type": "string application/json" }, "count": 2, "results": [ { "name": "fake thing 1", "url": "http://fakethings.com/1" }, { "name": "fake thing 2", "url": "http://fakethings.com/2" } ] }');
+  expect(items).toHaveTextContent('[ { "name": "fake thing 1", "url": "http://fakethings.com/1" }, { "name": "fake thing 2", "url": "http://fakethings.com/2" } ]');
+ 
 });
+
 
 // it('Should render results', () => {
 //   const result = {
