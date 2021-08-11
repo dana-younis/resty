@@ -9,11 +9,10 @@ In order to create the site's foundation design, the program uses a.CSS file imp
   This function is handed down through a prop to the App component so that it may begin the procedure.
 
 ## Links
-## 26
-https://codesandbox.io/s/c6d04
 
-## 27
-https://codesandbox.io/s/75n59
+
+## lab27
+https://codesandbox.io/s/uz2lx
 
 
 https://github.com/dana-younis/resty/actions

@@ -9,7 +9,9 @@ function Form(props) {
   let [method, methodFunc] = useState('get');
   let [url, urlFunc] = useState("https://pokeapi.co/api/v2/pokemon");
   let [requestBody, setRequestBody] = useState("https://pokeapi.co/api/v2/pokemon");
-
+  useEffect(() => {
+    console.log(url);
+  }, [url])
 
   function handleSubmit(e){
     e.preventDefault();

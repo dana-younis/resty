@@ -1,10 +1,12 @@
-import React from 'react'
-import Loading from '../Loading/Loading.jsx'
+import React from 'react';
+import Loading from '../Loading/Loading';
+import JSONPretty from 'react-json-pretty';
+import 'react-json-pretty/themes/monikai.css';
 
 function Results(props) {
   return (
     <section>
-    <pre data-testid="renderedData">{props.data ? JSON.stringify(props.data, undefined, 2) : <Loading/>}</pre>
+    { props.data ?<JSONPretty data-testid="renderedData" data={props.data}></JSONPretty>  :  <Loading/>}
   </section>
   )
 }
