@@ -11,14 +11,14 @@ In order to create the site's foundation design, the program uses a.CSS file imp
 ## Links
 
 
-## lab27
+## lab
 https://codesandbox.io/s/uz2lx
 
 
 https://github.com/dana-younis/resty/actions
 
 
-https://github.com/dana-younis/resty/pull/7
+
 
 ## UML
 
