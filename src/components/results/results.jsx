@@ -6,7 +6,7 @@ import 'react-json-pretty/themes/monikai.css';
 function Results(props) {
   return (
     <section>
-    { props.data ?<JSONPretty data-testid="renderedData" data={props.data}></JSONPretty>  :  <Loading/>}
+    { props.data ?<><h2>Headers</h2><JSONPretty  data={props.data.headers}></JSONPretty><h2>Result</h2><JSONPretty data-testid="renderedData" data={props.data.results}></JSONPretty></>  :  <Loading/>}
   </section>
   )
 }
