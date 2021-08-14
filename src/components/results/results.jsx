@@ -11,4 +11,4 @@ function Results(props) {
   )
 }
 
-export default Results
+export default Results;
