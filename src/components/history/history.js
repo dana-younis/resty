@@ -1,19 +1,27 @@
 import React from 'react';
-
+import axios from 'axios';
 function History(props) {
-//   function viewResults(result) {
-//     props.historyfunc(result);
-//   }
+    function historyfunc(result) {
+        setData(result);
+        dispatch(historyAction(result));
+      }
+      
+    
+
+    
+
+
   return (
     <div>
       <ul>
         {props.history.map((item, index) => {
           return (
-            <li  
+            <li
               key={index}
-            //   onClick={() => {
-            //     viewResults(item.result);
-            //   }}
+              onClick={() => {
+      
+                props.historyfunc(item,index);
+              }}
             >
               {item.method} {item.url}
             </li>
@@ -22,5 +30,5 @@ function History(props) {
       </ul>
     </div>
   );
-}
+    }
 export default History;
