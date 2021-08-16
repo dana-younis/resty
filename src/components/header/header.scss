@@ -1,0 +1,22 @@
+$bgColor: rgb(77, 35, 192);
+$bgColor5: rgb(129, 127, 117);
+$titleColor: rgb(165, 255, 214);
+
+body {
+  background-color: $bgColor;
+
+  #header {
+    text-align: center;
+    height: 100px;
+    background-color: $bgColor;
+    padding-bottom: 18px;
+    h1 {
+      font-family: fantasy;
+      font-size: 48px;
+      color: $titleColor;
+    //   float: left;
+      padding-right: 40px;
+      text-shadow: 4px 4px 0px rgb(4, 5, 5);
+    }
+  }
+}

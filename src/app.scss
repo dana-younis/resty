@@ -1,38 +1,30 @@
-$backgroundColor: #f5f5f5;
-
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
+  
+$bgColor: rgb(200, 200, 235);
 
 body {
-  background: $backgroundColor;
-  height: 100%;
+  background: $bgColor;
 
-  #root {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  
+
+  #bg {
+    h1 {
+      color:rgb(0, 0, 0)
+    }
   }
 
-  footer {
-    background: darken($backgroundColor, 50);
-    border-top: 1px solid #eee;
-    padding: 1em 3em;
-    margin: 0;
+  .rapper {
+    display: grid;
+    grid-template-columns: 33% 67%;
   }
 
-  header {
-    background: darken($backgroundColor, 75);
-    border-bottom: 1px solid #eee;
-    color: #eee;
-    padding: 0;
-    margin: 0;
+  .hist {
+    font-family: monospace;
+    word-wrap: break-word;
+  }
+  .divs{
+    font-family: monospace;
+    font-size: x-large;
+    color: rgb(211, 160, 9);
     text-align: center;
   }
-}
-.div {
-  background-color: rgb(134, 131, 131);
 }
