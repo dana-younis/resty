@@ -1,25 +1,14 @@
-// import React from 'react';
+import React from 'react';
+import './header.scss';
+import { Link, NavLink } from 'react-router-dom';
 
-// class Header extends React.Component {
-//   render() {
-//     return (
-//       <header>
-//         <h1>RESTy</h1>
-//       </header>
-//     );
-//   }
-// }
-
-// export default Header;
-
-import React from 'react'
-
-function Header() {
+const Header = (props) => {
   return (
-    <header>
-    <h1>RESTy</h1>
-  </header>
-  )
-}
+    <header id="header">
+      <h1>❤ resty by dana ❤</h1>
 
-export default Header
+    </header>
+  );
+};
+
+export default Header;
