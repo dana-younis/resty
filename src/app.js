@@ -35,11 +35,11 @@ function App() {
   const [data, setData] = useState(null);
   const [requestParams, setRequestParams] = useState({});
   const [requestBody, setRequestBody] = useState({});
-  
+
   useEffect(async () => {
-    const formData=window.localStorage.getItem('ADD-TO-HISTORY')
-    setRequestBody(JSON.parse(formData))
-    window.localStorage.setItem('ADD-TO-HISTORY', JSON.stringify(data))
+    const formData = window.localStorage.getItem('ADD-TO-HISTORY');
+    setRequestBody(JSON.parse(formData));
+    window.localStorage.setItem('ADD-TO-HISTORY', JSON.stringify(data));
     setData(null);
     if (requestBody) {
       const result = await axios[requestParams.method](
@@ -80,16 +80,15 @@ function App() {
   function historyfunc(result) {
     setData(result);
     dispatch(historyAction(result));
-    
   }
- 
+
   return (
     <>
       <Header />
       <div className="divs">Request Method: {requestParams.method}</div>
-      <div  className="divs">URL: {requestParams.url}</div>
+      <div className="divs">URL: {requestParams.url}</div>
       <Form handleApiCall={callApi} />
-      {history && <History historyfunc={historyfunc} history={state.history} />}
+      {history && <History historyfunc={historyfunc} history={state.history}  />}
       <Results data={data} />
       <Footer />
     </>
