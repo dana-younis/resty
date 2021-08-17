@@ -5,8 +5,8 @@ import { Link, NavLink } from 'react-router-dom';
 const Header = (props) => {
   return (
     <header id="header">
-      <h1>❤ resty by dana ❤</h1>
-
+    
+      <div>❤ resty by dana ❤</div>
     </header>
   );
 };
