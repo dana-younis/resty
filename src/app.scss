@@ -24,7 +24,67 @@ body {
   .divs{
     font-family: monospace;
     font-size: x-large;
-    color: rgb(211, 160, 9);
+    color: rgb(218, 3, 3);
     text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@mixin backlight($x, $y, $spread, $size, $colorA, $colorB, $duration) {
+  &:after {
+    
+    content: "";
+    top: $y;
+    left: $x;
+    right: 0;
+    z-index: -1;
+    // height: 100%;
+    // width: 100%;
+   
+    transform: scale($size);
+    -webkit-filter: blur($spread);
+    -moz-filter: blur($spread);
+    -ms-filter: blur($spread);
+    filter: blur($spread);
+    background: linear-gradient(270deg, $colorA, $colorB);
+    background-size: 200% 200%;
+    animation: animateGlow $duration ease infinite;
+    
+    @keyframes animateGlow {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+  }
+}
+
+div {
+
+
+
+  animation: textColor 5s ease infinite;
+  @include backlight(0, 5vw, 5vw, 0.75, #ffef0f, #ff0f0f, 10s);
+    
+  @keyframes textColor {
+    0% {
+      color: #ff0f0f;
+    }
+    50% {
+      color: #ffef0f;
+    }
+    100% {
+      color: #230deb;
+    }
   }
 }

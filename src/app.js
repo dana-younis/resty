@@ -7,39 +7,36 @@ import Footer from './components/footer/footer';
 import Form from './components/form/form';
 import History from './components/history/history';
 import Results from './components/results/results';
+const initialState = [];
 
-const initialState = {
-  history: [],
-};
-
-function historyReducer(state = initialState, action) {
+function historyReducer(history = initialState, action) {
   const { type, payload } = action;
   switch (type) {
     case 'ADD-TO-HISTORY':
-      const history = [...state.history, payload.history];
-      return { history };
+      console.log(history);
+      history = [...history, payload];
+      return history;
     default:
-      return state;
+      return history;
   }
 }
-
-function historyAction(history) {
+function addToHistory(url, method, result) {
   return {
     type: 'ADD-TO-HISTORY',
-    payload: { history },
+    payload: {
+      url,
+      method,
+      result,
+    },
   };
 }
-
 function App() {
-  const [state, dispatch] = useReducer(historyReducer, initialState);
+  const [history, dispatch] = useReducer(historyReducer, initialState);
   const [data, setData] = useState(null);
   const [requestParams, setRequestParams] = useState({});
   const [requestBody, setRequestBody] = useState({});
 
   useEffect(async () => {
-    const formData = window.localStorage.getItem('ADD-TO-HISTORY');
-    setRequestBody(JSON.parse(formData));
-    window.localStorage.setItem('ADD-TO-HISTORY', JSON.stringify(data));
     setData(null);
     if (requestBody) {
       const result = await axios[requestParams.method](
@@ -50,15 +47,9 @@ function App() {
         headers: result.headers,
         count: result.data.count,
         results: result.data.results,
-        count: 2,
-        method: data.method,
-        results: [
-          { name: 'fake thing 1', url: 'http://fakethings.com/1' },
-          { name: 'fake thing 2', url: 'http://fakethings.com/2' },
-        ],
       };
       setData(data);
-      dispatch(historyAction(requestParams.url, requestParams.method, data));
+      dispatch(addToHistory(requestParams.url, requestParams.method, data));
     } else {
       const result = await axios[requestParams.method](requestParams.url);
       const data = {
@@ -67,7 +58,7 @@ function App() {
         results: result.data.results,
       };
       setData(data);
-      dispatch(historyAction(requestParams.url, requestParams.method, data));
+      dispatch(addToHistory(requestParams.url, requestParams.method, data));
     }
   }, [requestParams]);
 
@@ -75,22 +66,20 @@ function App() {
     // mock output
     setRequestParams(requestParams);
     setRequestBody(requestBody);
-    dispatch(historyAction(requestParams));
   }
-  function historyfunc(result) {
+  function historyFunc(result) {
     setData(result);
-    dispatch(historyAction(result));
   }
-
   return (
     <>
       <Header />
       <div className="divs">Request Method: {requestParams.method}</div>
       <div className="divs">URL: {requestParams.url}</div>
       <Form handleApiCall={callApi} />
-      {history && <History historyfunc={historyfunc} history={state.history}  />}
+      {history && <History historyFunc={historyFunc} history={history} />}
       <Results data={data} />
       <Footer />
+     
     </>
   );
 }
