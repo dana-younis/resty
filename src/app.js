@@ -45,8 +45,8 @@ function App() {
       );
       const data = {
         headers: result.headers,
-        count: result.data.count,
-        results: result.data.results,
+        count: result.data.count? result.data.count :0,
+        results: result.data,
       };
       setData(data);
       dispatch(addToHistory(requestParams.url, requestParams.method, data));
@@ -54,8 +54,8 @@ function App() {
       const result = await axios[requestParams.method](requestParams.url);
       const data = {
         headers: result.headers,
-        count: result.data.count,
-        results: result.data.results,
+        count: result.data.count? result.data.count :0,
+        results: result.data,
       };
       setData(data);
       dispatch(addToHistory(requestParams.url, requestParams.method, data));
